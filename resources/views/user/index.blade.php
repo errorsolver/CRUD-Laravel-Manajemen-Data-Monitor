@@ -18,6 +18,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $i->username }}</td>
                 <td>{{ $i->created_at }}</td>
+            </tr>
         @endforeach
     </tbody>
 </table>
