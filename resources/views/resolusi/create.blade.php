@@ -9,7 +9,6 @@
         <label for="">Nama Resolusi:</label>
         <input type="text" name="nama" id="" placeholder="Masukkan nama resolusi">
     </div>
-
     <button type="submit" class="tombol">Submit</button>
 </form>
 

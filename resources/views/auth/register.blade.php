@@ -1,9 +1,7 @@
 @include('layout.head')
 
 <h1>Register</h1>
-@if (session('error'))
-    <p style="color: red;">{{ session('error') }}</p>
-@endif
+
 <form action="{{ route('auth.store') }}" method="POST">
     @csrf
     <input type="hidden" name="register" value="1">

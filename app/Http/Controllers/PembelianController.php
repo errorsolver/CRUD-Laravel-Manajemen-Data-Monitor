@@ -26,7 +26,7 @@ class PembelianController extends Controller
     public function create()
     {
         $monitor = Monitor::all();
-        return view('pembelian.monitor', compact('monitor'));
+        return view('pembelian.create', compact('monitor'));
     }
 
     /**
@@ -34,6 +34,12 @@ class PembelianController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'user_id' => 'required|integer',
+            'monitor_id' => 'required|integer',
+            'jumlah' => 'required|integer',
+        ]);
+
         $harga = Monitor::where('id', $request->monitor_id)->first()->harga;
         $request->merge(['harga_total' => $harga * $request->jumlah]);
         $monitor = Monitor::find($request->monitor_id);
